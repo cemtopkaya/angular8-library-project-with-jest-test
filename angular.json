@@ -78,20 +78,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "configPath":"./src/jest.config.js",
+            "tsConfig": "tsconfig.spec.json"
           }
         },
         "lint": {
@@ -117,6 +107,40 @@
             "production": {
               "devServerTarget": "jest-ng-test:serve:production"
             }
+          }
+        }
+      }
+    },
+    "@kapsam/paket-a": {
+      "projectType": "library",
+      "root": "projects/kapsam/paket-a",
+      "sourceRoot": "projects/kapsam/paket-a/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/kapsam/paket-a/tsconfig.lib.json",
+            "project": "projects/kapsam/paket-a/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath":"./jest.config.js",
+            "tsConfig": "tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kapsam/paket-a/tsconfig.lib.json",
+              "projects/kapsam/paket-a/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

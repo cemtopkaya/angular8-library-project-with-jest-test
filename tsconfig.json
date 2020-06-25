@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "esModuleInterop": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -17,7 +18,19 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "types": [
+      "jest",
+      "node"
+    ],
+    "paths": {
+      "@kapsam/paket-a": [
+        "dist/kapsam/paket-a"
+      ],
+      "@kapsam/paket-a/*": [
+        "dist/kapsam/paket-a/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -26,6 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('jest-ng-test');
   });
 
+  it('geçememesi gerekir', () => {
+    expect("Naber kangi").toContain('kanki');
+  });
+  
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
