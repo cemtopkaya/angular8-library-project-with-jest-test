@@ -127,6 +127,7 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
+            "setupFilesAfterEnv":"<rootDir>/setupJest.ts",
             "configPath":"./jest.config.js",
             "tsConfig": "tsconfig.spec.json"
           }
