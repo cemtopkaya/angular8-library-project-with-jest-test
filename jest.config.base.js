@@ -2,6 +2,7 @@ console.log("---------------- BASE Jest.base.config ---------------");
 const { pathsToModuleNameMapper } = require("ts-jest/utils");
 const { compilerOptions } = require("./tsconfig");
 module.exports = {
+  preset: 'jest-preset-angular',
   globals: {
     "ts-jest": {
       allowSyntheticDefaultImports: true,

@@ -15,8 +15,8 @@ module.exports = {
   ...jestBaseConfig,
   rootDir: 'projects/kapsam/paket-a/src',
   /**
-   * Her testten önce çalışmasını istediğimiz bir script varsa 
-   * setupFilesAfterEnv tam bu iş için biçilmiş kaftan.
+   * `TypeError: Cannot read property 'getComponentFromError' of null` hatasını alıyorsanız ve 
+   * her testten önce çalışmasını istediğimiz bir script varsa `setupFilesAfterEnv` tam bu iş için biçilmiş kaftan.
    * 
    * Eğer ayarlar içinde yukarıdaki kodu açarsak, 
     
