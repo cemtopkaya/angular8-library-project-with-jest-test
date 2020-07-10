@@ -48,9 +48,14 @@ module.exports = {
    */
   testMatch: ["**/+(*.)+(spec).(ts)?(x)"],
   /**
-   * Eğer
+   * setupTestFrameworkScriptFile yerini setupFilesAfterEnv özelliğine bırakmıştır.
+   * Paketteki her test dosyası yürütülmeden önce test çerçevesini yapılandırmak 
+   * veya ayarlamak için bazı kodlar çalıştıran modüllerin yollarının listesi. 
+   * SetupFiles, test çerçevesi ortama yüklenmeden önce yürütüldüğünden, bu komut dosyası, 
+   * test çerçevesi ortama yüklendikten hemen sonra bazı kodları çalıştırma fırsatı sunar.
+   * Birden fazla dosyayı testlerin başında çalıştırabilmek için dizi tipinde değer alır.
+        "setupFilesAfterEnv": ["<rootDir>/src/setupJest.ts"],
    */
-  // "setupFilesAfterEnv": ["<rootDir>/src/setupJest.ts"],
   //********************************************************* COVERAGE */
   collectCoverage: true,
   coverageReporters: ["html"],
