@@ -2,6 +2,13 @@ console.log("---------------- BASE Jest.base.config ---------------");
 const { pathsToModuleNameMapper } = require("ts-jest/utils");
 const { compilerOptions } = require("./tsconfig");
 module.exports = {
+  /**
+   * https://jestjs.io/docs/en/configuration#preset-string
+   * preset, Jest yapılandırması için temel olarak kullanılan bir ön ayar.
+   * Bir ön ayar, kökte bir jest-preset.json veya jest-preset.js dosyasına sahip bir npm modülüne işaret etmelidir.
+   * jest-preset-angular Paketindeki ayarlar ile başlatıyoruz
+       preset: 'jest-preset-angular',  
+   */
   preset: 'jest-preset-angular',
   globals: {
     "ts-jest": {
@@ -33,10 +40,16 @@ module.exports = {
   transform: {
     '^.+\\.(ts|js|html)$': 'ts-jest',
   },
-  // preset: 'jest-preset-angular',
   roots: ["<rootDir>/"],
-  // transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
+  /**
+   * https://jestjs.io/docs/en/configuration#transformignorepatterns-arraystring
+   * Eğer typescript -> javascript dönüşümü (transpile) yapmak istemiyorsanız :
+   // transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
+   */
   testMatch: ["**/+(*.)+(spec).(ts)?(x)"],
+  /**
+   * Eğer
+   */
   // "setupFilesAfterEnv": ["<rootDir>/src/setupJest.ts"],
   //********************************************************* COVERAGE */
   collectCoverage: true,
