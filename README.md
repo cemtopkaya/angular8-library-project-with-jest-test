@@ -1,5 +1,10 @@
 # Jest İle Angular Kütüphane ve Uygulama Projesini Test Etmek 
 
+# Testin Yapısı
+
+
+
+# Sorun Giderme
 ## `TypeError: Cannot read property 'getComponentFromError' of null` 
 
 Aşağıdaki hata angular projesinde koştuğu için `import 'jest-preset-angular';` satırını içeren `setupJest.ts` (ismi farklı olabilir elbette) dosyasını her test öncesinde çalıştıracak. Böylece kepeğe son!  

@@ -6,10 +6,26 @@ module.exports = {
   globals: {
     "ts-jest": {
       allowSyntheticDefaultImports: true,
-      // tsConfig: "tsconfig.spec.json",
+      /**
+       * tsconfig bilgisini ister angular.json içinde de tayin edilebilir 
+               "test": {
+                 "builder": "@angular-builders/jest:run",
+                 "options": {
+                   "configPath":"./src/jest.config.js",
+                   "tsConfig": "tsconfig.spec.json"
+                 }
+               },
+
+       * veya ilgili paketin olduğu klasördeki jest.config.js dosyasında belirtebiliriz.
+         globals: {
+            "ts-jest": {
+                tsConfig: "tsconfig.spec.json",
+       */
       stringifyContentPathRegex: '\\.html$',
       // astTransformers: [
-      //     require.resolve('jest-preset-angular/InlineHtmlStripStylesTransformer')
+      //   require.resolve('jest-preset-angular/InlineHtmlStripStylesTransformer'),
+      //   "jest-preset-angular/build/InlineFilesTransformer",
+      //   "jest-preset-angular/build/StripStylesTransformer"
       // ],
       "no-cache": true
     },
