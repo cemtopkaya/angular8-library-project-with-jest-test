@@ -3,6 +3,27 @@
 # Testin Yapısı
 
 
+# Jest Ayarları
+
+## configPath
+
+`configPath` değerini `angular.json` içinde verilebilinir veya jest komut satırında tetiklenirken `--configPath` diye anahtar olarak verilebilinir.
+
+```
+  "test": {
+    "builder": "@angular-builders/jest:run",
+    "options": {
+      "configPath":"./src/jest.config.js",
+      "tsConfig": "tsconfig.spec.json"
+    }
+  },
+```
+
+## showConfig
+
+Jest ayarlarının ne olduğunu görmek için `ng test --showConfig` veya `npx jest --showConfig` komutlarını çalıştırabiliriz.
+
+
 
 # Sorun Giderme
 ## `TypeError: Cannot read property 'getComponentFromError' of null` 
@@ -101,13 +122,24 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Derleme
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`ng build` ile varsayılan projeyi derleriz. Derleme sonucunda oluşacak dosyalar `dist/` dizinine kopyalanır. Projelerin/kütüphanelerin dist dizinine derlenmiş hallerini bağımlı modülleri dist dizinine doğru sırayla atacak şekilde oluşturmalısınız. Doğru sıradan kastım en bağımsız modülü en önce sonra sırasıyla diğer modülleri bağımlılıklarına göre build etmekti. `--prod` Anahtarını kullanarak üretim hattına doğru yazılımınızı derlemiş olacaksınız.
 
-## Running unit tests
+## Birim Testleri Çalıştırmak
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng test` Komutu angular.json içindeki tüm testleri Jest üstünden çalıştıracaktır.
+`ng test @kapsam/paket-a` Komut satırında çalıştırıldığında sadece `@kapsam/paket-a` kütüphanesinin testlerini koşturmuş oluruz.
+`angular.json` Dosyasında tanımlanmış proje isimlerini kullanarak testleri koşturabiliriz.
+Eğer sadece özel bir testi koşturmak istersek `npx jest "<spec.ts dosyasının yolu>" -t "<it ile tanımlı testin açıklaması>"`
+
+```
+$ npx jest "c:/Users/cem.topkaya/git/jest-ng-test/projects/kapsam/paket-a/src/lib/servis_test/basit.service.spec.ts" -t "PaketAService should be created"
+
+veya npx ile
+
+$ node "c:/Users/cem.topkaya/git/jest-ng-test/node_modules/jest/bin/jest.js" "c:/Users/cem.topkaya/git/jest-ng-test/projects/kapsam/paket-a/src/lib/servis_test/basit.service.spec.ts" -t "PaketAService should be created"
+```
 
 ## Running end-to-end tests
 
