@@ -1,7 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
-import { GelismisService } from './gelismis.service';
 import { HttpClientModule } from '@angular/common/http';
+
+import { GelismisService } from './gelismis.service';
 
 describe("PaketAService", () => {
   beforeEach(() => {

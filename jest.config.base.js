@@ -56,6 +56,7 @@ module.exports = {
    * Birden fazla dosyayı testlerin başında çalıştırabilmek için dizi tipinde değer alır.
         "setupFilesAfterEnv": ["<rootDir>/src/setupJest.ts"],
    */
+  // setupFilesAfterEnv: ['<rootDir>/setupJest.ts'],
   //********************************************************* COVERAGE */
   collectCoverage: true,
   coverageReporters: ["html"],
@@ -70,7 +71,6 @@ module.exports = {
   ],
   //*********************************************************** REPORT */
   reporters: ['default'],
-  // setupFilesAfterEnv: ['<rootDir>/setupJest.ts'],
   /**
     Aşağıdaki hatayı çözmek için bir yeri ignore etmemiz gerekiyor
   The name `@cinar/cn-nssf-api` was looked up in the Haste module map. It cannot be resolved, because there exists several different files, or packages, that provide a module for that particular name and platform. The platform is generic (no extension). You must delete or blacklist files until there remains only one of these:
