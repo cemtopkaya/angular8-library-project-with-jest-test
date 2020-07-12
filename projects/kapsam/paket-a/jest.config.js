@@ -13,6 +13,12 @@ const setupFilesAfterEnv = [
 
 module.exports = {
   ...jestBaseConfig,
+  
+  /**
+   * Eğer rootDir değişirse jest.base.config.js içindeki @angular, @cinar gibi modüllerinin yerini burada belirtmek gerekecek
+   *   rootDir: "./projects/cinar/cn-create-slice-api",
+   * O yüzden rootDir projenin dizini olarak kalırsa daha az iş çıkar
+   */
   rootDir: 'projects/kapsam/paket-a/src',
   /**
    * `TypeError: Cannot read property 'getComponentFromError' of null` hatasını alıyorsanız ve 
