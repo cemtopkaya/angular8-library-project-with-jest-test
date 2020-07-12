@@ -36,7 +36,7 @@ module.exports = {
    * `TypeError: Cannot read property 'getComponentFromError' of null` hatasını alıyorsanız ve 
    * her testten önce çalışmasını istediğimiz bir script varsa `setupFilesAfterEnv` tam bu iş için biçilmiş kaftan.
    * 
-   * Eğer ayarlar içinde yukarıdaki kodu açarsak, 
+   * Eğer ayarlar içinde aşağıdaki ayarı eklersek, 
     
         setupFilesAfterEnv:['<rootDir>/setupJest.ts'],
     
