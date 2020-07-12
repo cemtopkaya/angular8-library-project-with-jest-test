@@ -1,6 +1,7 @@
 {
   "name": "jest-ng-test",
   "version": "0.0.0",
+  "homepage": "https://github.com/cemtopkaya/angular8-library-project-with-jest-test",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
