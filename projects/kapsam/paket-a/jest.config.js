@@ -15,8 +15,20 @@ module.exports = {
   ...jestBaseConfig,
   
   /**
-   * Eğer rootDir değişirse jest.base.config.js içindeki @angular, @cinar gibi modüllerinin yerini burada belirtmek gerekecek
-   *   rootDir: "./projects/cinar/cn-create-slice-api",
+   * Eğer rootDir projenin kök dizini değişirse, jest.base.config.js içindeki @angular, @cinar gibi modüllerinin yerini burada belirtmek gerekecek
+   * rootDir Nasıl Ayarlanır?
+   *  1) jest.config dosyalarında 
+            rootDir: "./projects/cinar/cn-create-slice-api",
+   *  2) angular.json'da ilgili projenin (çoklu proje olduğu durumlarda) architect->test içinde aşağıdaki gibi
+            "test": {
+              "builder": "@angular-builders/jest:run",
+              "options": {
+                "rootDir": "projects/cinar/cn-create-slice-api",
+                "configPath": "jest.config.js"
+              }
+            },
+   *
+   * Eğer rootDir dizini proje dizini olarak kalırsa, jest.base.config.js dosyasında bir kere modüllerin yerini tayin edersiniz
    * O yüzden rootDir projenin dizini olarak kalırsa daha az iş çıkar
    */
   rootDir: 'projects/kapsam/paket-a/src',
